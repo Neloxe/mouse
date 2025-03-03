@@ -6,7 +6,7 @@ from MouseMaze_RND import MouseMazeEnv
 
 gym.register(
     id="MouseMaze-v1",
-    entry_point="MouseMaze_RND:MouseMazeEnv",
+    entry_point="MouseMaze_STATIC:MouseMazeEnv",
 )
 
 print("Creating environment...")
@@ -14,7 +14,7 @@ env = gym.make("MouseMaze-v1", render_mode="human")
 print("Environment created.")
 
 print("Loading model...")
-model = DQN.load("dqn_frozen", env=env)
+model = DQN.load("dqn_frozen_static", env=env)
 print("Model loaded.")
 
 print("Evaluating policy...")
